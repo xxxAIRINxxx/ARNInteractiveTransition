@@ -73,6 +73,7 @@ class ViewController: UIViewController {
                 UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
                 if completeTransition {
                     self!.animator.interactiveType = .Dismiss
+                    self!.tableView.panGestureRecognizer.state = .Cancelled
                     self!.tableView.userInteractionEnabled = false
                     self!.animator.contentScrollView = nil
                 }
