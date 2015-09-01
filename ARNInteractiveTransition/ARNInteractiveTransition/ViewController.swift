@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var collectionView : UICollectionView!
+    weak var targetTableView : UITableView!
     
     var animator : ARNTransitionAnimator!
     var modalVC : ModalViewController!
@@ -27,7 +28,15 @@ class ViewController: UIViewController {
             self!.animator.interactiveType = .None
         }
         
+        self.collectionView.registerNib(UINib(nibName: "MainCell", bundle: nil), forCellWithReuseIdentifier: "MainCell")
+        
         self.setupAnimator()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.updateAnimationHandlers()
     }
     
     @IBAction func tapMenuButton() {
@@ -39,15 +48,26 @@ class ViewController: UIViewController {
     
     func setupAnimator() {
         self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: modalVC!)
+        self.animator.usingSpringWithDamping = 0.8
         self.animator.gestureTargetView = self.view
         self.animator.interactiveType = .Present
-        self.animator.contentScrollView = self.tableView
+        
+        modalVC.transitioningDelegate = self.animator
+    }
+    
+    func updateAnimationHandlers() {
+        self.animator.interactiveType = .Present
+        for cell in self.collectionView.visibleCells() {
+            self.targetTableView = cell.tableView
+            self.animator.contentScrollView = self.targetTableView
+        }
         
         // Present
         
         self.animator.presentationBeforeHandler = { [weak self] (containerView: UIView, transitionContext:
             UIViewControllerContextTransitioning) in
             self!.animator.direction = .Bottom
+            
             containerView.addSubview(self!.modalVC.view)
             containerView.addSubview(self!.view)
             
@@ -62,19 +82,20 @@ class ViewController: UIViewController {
             }
             
             self!.animator.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
-                self!.view.frame.origin.y = endOriginY * percentComplete
+                let _percentComplete = percentComplete >= 0 ? percentComplete : 0
+                self!.view.frame.origin.y = endOriginY * _percentComplete
                 if self!.view.frame.origin.y < 0.0 {
                     self!.view.frame.origin.y = 0.0
                 }
-                self!.modalVC.view.alpha = 1.0 * percentComplete
+                self!.modalVC.view.alpha = 1.0 * _percentComplete
             }
             
             self!.animator.presentationCompletionHandler = {(containerView: UIView, completeTransition: Bool) in
                 UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
                 if completeTransition {
                     self!.animator.interactiveType = .Dismiss
-                    self!.tableView.panGestureRecognizer.state = .Cancelled
-                    self!.tableView.userInteractionEnabled = false
+                    self!.targetTableView.panGestureRecognizer.state = .Cancelled
+                    self!.collectionView.userInteractionEnabled = false
                     self!.animator.contentScrollView = nil
                 }
             }
@@ -93,11 +114,12 @@ class ViewController: UIViewController {
             }
             
             self!.animator.dismissalAnimationHandler = {(containerView: UIView, percentComplete: CGFloat) in
-                self!.view.frame.origin.y = endOriginY - (endOriginY * percentComplete)
+                let _percentComplete = percentComplete >= 0 ? percentComplete : 0
+                self!.view.frame.origin.y = endOriginY - (endOriginY * _percentComplete)
                 if self!.view.frame.origin.y < 0.0 {
                     self!.view.frame.origin.y = 0.0
                 }
-                self!.modalVC.view.alpha = 1.0 - (1.0 * percentComplete)
+                self!.modalVC.view.alpha = 1.0 - (1.0 * _percentComplete)
             }
         }
         
@@ -105,23 +127,47 @@ class ViewController: UIViewController {
             UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
             if completeTransition {
                 self!.animator.interactiveType = .Present
-                self!.tableView.userInteractionEnabled = true
-                self!.animator.contentScrollView = self!.tableView
+                self!.collectionView.userInteractionEnabled = true
+                self!.animator.contentScrollView = self!.targetTableView
             }
         }
-        
-        modalVC.transitioningDelegate = self.animator
     }
     
-    // MARK: - UITableViewDataSource
+    // MARK: - UICollectionViewDataSource
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
+        
+        cell.tableView.setContentOffset(CGPointZero, animated: false)
+        self.updateAnimationHandlers()
+        
         return cell
+    }
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        if  scrollView == self.collectionView {
+            self.targetTableView.scrollEnabled = false
+            self.animator.interactiveType = .None
+        } else if scrollView == self.targetTableView {
+            self.collectionView.scrollEnabled = false
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        self.collectionView.scrollEnabled = true
+        self.targetTableView.scrollEnabled = true
     }
 }
 

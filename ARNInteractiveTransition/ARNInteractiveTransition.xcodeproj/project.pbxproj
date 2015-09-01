@@ -15,6 +15,8 @@
 		7A33EB711AA1F40E004E7A84 /* ARNInteractiveTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33EB701AA1F40E004E7A84 /* ARNInteractiveTransitionTests.swift */; };
 		7A33EB7B1AA1F4E6004E7A84 /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33EB7A1AA1F4E6004E7A84 /* ARNTransitionAnimator.swift */; };
 		7A33EB7D1AA1F520004E7A84 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33EB7C1AA1F520004E7A84 /* ModalViewController.swift */; };
+		91E79D871B93EB5F001AE4BC /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E79D861B93EB5F001AE4BC /* MainCell.swift */; };
+		91E79D891B93EBD7001AE4BC /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91E79D881B93EBD7001AE4BC /* MainCell.xib */; };
 		91EA7DBC1B8C181B00B3E53E /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91EA7DBB1B8C181B00B3E53E /* image.jpg */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		7A33EB701AA1F40E004E7A84 /* ARNInteractiveTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNInteractiveTransitionTests.swift; sourceTree = "<group>"; };
 		7A33EB7A1AA1F4E6004E7A84 /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARNTransitionAnimator.swift; sourceTree = "<group>"; };
 		7A33EB7C1AA1F520004E7A84 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		91E79D861B93EB5F001AE4BC /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		91E79D881B93EBD7001AE4BC /* MainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
 		91EA7DBB1B8C181B00B3E53E /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +90,8 @@
 				917D483C1B796C700093BD7E /* Lib */,
 				7A33EB5A1AA1F40D004E7A84 /* AppDelegate.swift */,
 				7A33EB5C1AA1F40D004E7A84 /* ViewController.swift */,
+				91E79D861B93EB5F001AE4BC /* MainCell.swift */,
+				91E79D881B93EBD7001AE4BC /* MainCell.xib */,
 				7A33EB7C1AA1F520004E7A84 /* ModalViewController.swift */,
 				7A33EB5E1AA1F40D004E7A84 /* Main.storyboard */,
 				7A33EB611AA1F40D004E7A84 /* Images.xcassets */,
@@ -213,6 +219,7 @@
 				7A33EB651AA1F40D004E7A84 /* LaunchScreen.xib in Resources */,
 				7A33EB621AA1F40D004E7A84 /* Images.xcassets in Resources */,
 				91EA7DBC1B8C181B00B3E53E /* image.jpg in Resources */,
+				91E79D891B93EBD7001AE4BC /* MainCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +241,7 @@
 				7A33EB5D1AA1F40D004E7A84 /* ViewController.swift in Sources */,
 				7A33EB5B1AA1F40D004E7A84 /* AppDelegate.swift in Sources */,
 				7A33EB7B1AA1F4E6004E7A84 /* ARNTransitionAnimator.swift in Sources */,
+				91E79D871B93EB5F001AE4BC /* MainCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
