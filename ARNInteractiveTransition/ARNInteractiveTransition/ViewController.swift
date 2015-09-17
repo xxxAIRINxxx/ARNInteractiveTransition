@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         self.view.layer.cornerRadius = 8.0
         
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
         self.modalVC.modalPresentationStyle = .Custom
         self.modalVC.tapCloseButtonActionHandler = { [weak self] in
@@ -120,7 +120,7 @@ class ViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
         return cell
     }
 }

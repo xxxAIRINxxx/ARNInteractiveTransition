@@ -45,11 +45,6 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     public var panCompletionThreshold : CGFloat = 100.0
     public var direction : ARNTransitionAnimatorDirection = .Bottom
     public var contentScrollView : UIScrollView? {
-        willSet {
-            if let _contentScrollView = self.contentScrollView {
-                _contentScrollView.bounces = self.tmpBounces
-            }
-        }
         didSet {
             if let _contentScrollView = self.contentScrollView {
                 self.tmpBounces = _contentScrollView.bounces
@@ -85,7 +80,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     
     private(set) var operationType : ARNTransitionAnimatorOperation
     private(set) var isPresenting : Bool = true
-    private(set) var isTransitioning : Bool = false
+    private(set)  var isTransitioning : Bool = false
     
     private var gesture : UIPanGestureRecognizer?
     private var transitionContext : UIViewControllerContextTransitioning?
@@ -318,7 +313,7 @@ public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
 
 extension ARNTransitionAnimator: UIViewControllerAnimatedTransitioning {
     
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return self.transitionDuration
     }
     
@@ -326,11 +321,11 @@ extension ARNTransitionAnimator: UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView()
         
         self.transitionContext = transitionContext
-        self.fireBeforeHandler(containerView, transitionContext: transitionContext)
+        self.fireBeforeHandler(containerView!, transitionContext: transitionContext)
         
         self.animateWithDuration(
             self.transitionDuration(transitionContext),
-            containerView: containerView,
+            containerView: containerView!,
             completeTransition: true) {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         }
@@ -374,7 +369,7 @@ extension ARNTransitionAnimator: UIViewControllerTransitioningDelegate {
 
 // MARK: UIViewControllerInteractiveTransitioning
 
-extension ARNTransitionAnimator: UIViewControllerInteractiveTransitioning {
+extension ARNTransitionAnimator {
     
     public override func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView()
@@ -390,7 +385,7 @@ extension ARNTransitionAnimator: UIViewControllerInteractiveTransitioning {
         }
         
         self.transitionContext = transitionContext
-        self.fireBeforeHandler(containerView, transitionContext: transitionContext)
+        self.fireBeforeHandler(containerView!, transitionContext: transitionContext)
     }
 }
 
@@ -402,7 +397,7 @@ extension ARNTransitionAnimator {
         super.updateInteractiveTransition(percentComplete)
         if let transitionContext = self.transitionContext {
             let containerView = transitionContext.containerView()
-            self.fireAnimationHandler(containerView, percentComplete: percentComplete)
+            self.fireAnimationHandler(containerView!, percentComplete: percentComplete)
         }
     }
     
@@ -412,7 +407,7 @@ extension ARNTransitionAnimator {
             let containerView = transitionContext.containerView()
             self.animateWithDuration(
                 self.transitionDuration(transitionContext),
-                containerView: containerView,
+                containerView: containerView!,
                 completeTransition: true) {
                     transitionContext.completeTransition(true)
             }
@@ -425,7 +420,7 @@ extension ARNTransitionAnimator {
             let containerView = transitionContext.containerView()
             self.animateWithDuration(
                 self.transitionDuration(transitionContext),
-                containerView: containerView,
+                containerView: containerView!,
                 completeTransition: false) {
                     transitionContext.completeTransition(false)
             }
