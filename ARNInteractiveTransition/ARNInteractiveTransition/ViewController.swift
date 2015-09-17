@@ -51,6 +51,10 @@ class ViewController: UIViewController {
             containerView.addSubview(self!.modalVC.view)
             containerView.addSubview(self!.view)
             
+            self!.tableView.userInteractionEnabled = false
+            self!.tableView.bounces = false
+            self!.tableView.setContentOffset(self!.tableView.contentOffset, animated: false)
+            
             self!.modalVC.view.layoutIfNeeded()
             
             let endOriginY = CGRectGetHeight(containerView.bounds) - 50
@@ -59,6 +63,8 @@ class ViewController: UIViewController {
             self!.animator.presentationCancelAnimationHandler = { (containerView: UIView) in
                 self!.view.frame.origin.y = 0.0
                 self!.modalVC.view.alpha = 0.0
+                self!.tableView.userInteractionEnabled = true
+                self!.tableView.bounces = true
             }
             
             self!.animator.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
@@ -74,8 +80,9 @@ class ViewController: UIViewController {
                 if completeTransition {
                     self!.animator.interactiveType = .Dismiss
                     self!.tableView.panGestureRecognizer.state = .Cancelled
-                    self!.tableView.userInteractionEnabled = false
                     self!.animator.contentScrollView = nil
+                    
+                    self!.tableView.bounces = true
                 }
             }
         }
@@ -86,10 +93,12 @@ class ViewController: UIViewController {
             self!.animator.direction = .Top
             let endOriginY = CGRectGetHeight(containerView.bounds) - 50
             self!.modalVC.view.alpha = 1.0
+            self!.tableView.userInteractionEnabled = true
             
             self!.animator.dismissalCancelAnimationHandler = { (containerView: UIView) in
                 self!.view.frame.origin.y = endOriginY
                 self!.modalVC.view.alpha = 1.0
+                self!.tableView.userInteractionEnabled = false
             }
             
             self!.animator.dismissalAnimationHandler = {(containerView: UIView, percentComplete: CGFloat) in
@@ -105,7 +114,6 @@ class ViewController: UIViewController {
             UIApplication.sharedApplication().keyWindow!.addSubview(self!.view)
             if completeTransition {
                 self!.animator.interactiveType = .Present
-                self!.tableView.userInteractionEnabled = true
                 self!.animator.contentScrollView = self!.tableView
             }
         }
