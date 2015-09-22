@@ -1,0 +1,11 @@
+
+xcodeproj 'ARNInteractiveTransition.xcodeproj'
+
+platform :ios, '8.0'
+use_frameworks!
+
+target 'ARNInteractiveTransition' do
+
+  pod 'ARNTransitionAnimator'
+
+end
