@@ -17,6 +17,8 @@ Custom interactive transition like Facobook Paper, Siori, AWA iOS App. written i
 
 ## Using Transition Animator
 
+This sample have created as a showcase of ARNTransitionAnimator.
+
 [ARNTransitionAnimator](https://github.com/xxxAIRINxxx/ARNTransitionAnimator)
 
 
