@@ -19,6 +19,16 @@ class ModalViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("MainViewController viewWillAppear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("MainViewController viewWillDisappear")
+    }
+    
     // MARK: - UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

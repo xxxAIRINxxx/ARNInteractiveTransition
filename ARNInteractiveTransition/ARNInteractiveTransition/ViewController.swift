@@ -31,6 +31,20 @@ class ViewController: UIViewController {
         self.setupAnimator()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewController viewWillAppear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ViewController viewWillDisappear")
+    }
+    
+    override func shouldAutomaticallyForwardAppearanceMethods() -> Bool {
+        return false
+    }
+    
     @IBAction func tapMenuButton() {
         if self.presentedViewController == nil {
             self.animator.interactiveType = .None
@@ -48,6 +62,7 @@ class ViewController: UIViewController {
         
         self.animator.presentationBeforeHandler = { [weak self] (containerView: UIView, transitionContext:
             UIViewControllerContextTransitioning) in
+            self!.beginAppearanceTransition(false, animated:true)
             self!.animator.direction = .Bottom
             containerView.addSubview(self!.modalVC.view)
             containerView.addSubview(self!.view)
@@ -84,6 +99,7 @@ class ViewController: UIViewController {
                     self!.animator.contentScrollView = nil
                     
                     self!.tableView.bounces = true
+                    self!.endAppearanceTransition()
                 }
             }
         }
@@ -91,6 +107,7 @@ class ViewController: UIViewController {
         // Dismiss
         
         self.animator.dismissalBeforeHandler = { [weak self] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
+            self!.beginAppearanceTransition(true, animated:true)
             self!.animator.direction = .Top
             let endOriginY = CGRectGetHeight(containerView.bounds) - 50
             self!.modalVC.view.alpha = 1.0
@@ -116,6 +133,7 @@ class ViewController: UIViewController {
             if completeTransition {
                 self!.animator.interactiveType = .Present
                 self!.animator.contentScrollView = self!.tableView
+                self!.endAppearanceTransition()
             }
         }
         
