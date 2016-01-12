@@ -14,6 +14,9 @@ Custom interactive transition like Facobook Paper, Siori, AWA iOS App. written i
 
 - [AWA](http://awa.fm/)
 
+## Demo
+
+[See demo on Appetize.io](https://appetize.io/app/jrfxnyzzftnz8yjbj7hx6q9pj0?device=iphone5s&scale=75&orientation=portrait&osVersion=9.2)
 
 ## Using Transition Animator
 
