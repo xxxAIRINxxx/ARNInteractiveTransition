@@ -81,6 +81,7 @@ class ViewController: UIViewController {
                 self!.modalVC.view.alpha = 0.0
                 self!.tableView.userInteractionEnabled = true
                 self!.tableView.bounces = true
+                self!.endAppearanceTransition()
             }
             
             self!.animator.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
@@ -117,6 +118,7 @@ class ViewController: UIViewController {
                 self!.view.frame.origin.y = endOriginY
                 self!.modalVC.view.alpha = 1.0
                 self!.tableView.userInteractionEnabled = false
+                self!.endAppearanceTransition()
             }
             
             self!.animator.dismissalAnimationHandler = {(containerView: UIView, percentComplete: CGFloat) in
