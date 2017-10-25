@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		434B7B9ADDAEF4BB171B755E /* Pods_ARNInteractiveTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5CA38B78F4F896E235954B /* Pods_ARNInteractiveTransition.framework */; };
+		5745EE70F40BC1698B95C772 /* Pods_ARNInteractiveTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7837A0F9BFE743231BF3EF8 /* Pods_ARNInteractiveTransition.framework */; };
 		7A33EB5B1AA1F40D004E7A84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33EB5A1AA1F40D004E7A84 /* AppDelegate.swift */; };
 		7A33EB5D1AA1F40D004E7A84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33EB5C1AA1F40D004E7A84 /* ViewController.swift */; };
 		7A33EB601AA1F40D004E7A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A33EB5E1AA1F40D004E7A84 /* Main.storyboard */; };
@@ -15,6 +15,7 @@
 		7A33EB651AA1F40D004E7A84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A33EB631AA1F40D004E7A84 /* LaunchScreen.xib */; };
 		7A33EB711AA1F40E004E7A84 /* ARNInteractiveTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33EB701AA1F40E004E7A84 /* ARNInteractiveTransitionTests.swift */; };
 		7A33EB7D1AA1F520004E7A84 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33EB7C1AA1F520004E7A84 /* ModalViewController.swift */; };
+		9183E4E11F6189CF001CD3B5 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183E4E01F6189CF001CD3B5 /* InteractiveTransition.swift */; };
 		91EA7DBC1B8C181B00B3E53E /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91EA7DBB1B8C181B00B3E53E /* image.jpg */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C5CA38B78F4F896E235954B /* Pods_ARNInteractiveTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARNInteractiveTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A52B73FC70C79DAF011C80 /* Pods-ARNInteractiveTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARNInteractiveTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARNInteractiveTransition/Pods-ARNInteractiveTransition.release.xcconfig"; sourceTree = "<group>"; };
 		7A33EB551AA1F40D004E7A84 /* ARNInteractiveTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNInteractiveTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A33EB591AA1F40D004E7A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A33EB5A1AA1F40D004E7A84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +42,10 @@
 		7A33EB6F1AA1F40E004E7A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A33EB701AA1F40E004E7A84 /* ARNInteractiveTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNInteractiveTransitionTests.swift; sourceTree = "<group>"; };
 		7A33EB7C1AA1F520004E7A84 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		9183E4E01F6189CF001CD3B5 /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
 		91EA7DBB1B8C181B00B3E53E /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
-		9B85152E6668E1AE6CA6F410 /* Pods-ARNInteractiveTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARNInteractiveTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARNInteractiveTransition/Pods-ARNInteractiveTransition.release.xcconfig"; sourceTree = "<group>"; };
-		A18552ECAB459ADC0286D435 /* Pods-ARNInteractiveTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARNInteractiveTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARNInteractiveTransition/Pods-ARNInteractiveTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		A7837A0F9BFE743231BF3EF8 /* Pods_ARNInteractiveTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARNInteractiveTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34D02C3359851A2759105AF /* Pods-ARNInteractiveTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARNInteractiveTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARNInteractiveTransition/Pods-ARNInteractiveTransition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				434B7B9ADDAEF4BB171B755E /* Pods_ARNInteractiveTransition.framework in Frameworks */,
+				5745EE70F40BC1698B95C772 /* Pods_ARNInteractiveTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,8 +73,8 @@
 				7A33EB571AA1F40D004E7A84 /* ARNInteractiveTransition */,
 				7A33EB6D1AA1F40E004E7A84 /* ARNInteractiveTransitionTests */,
 				7A33EB561AA1F40D004E7A84 /* Products */,
-				8F9EEFB6A0377195B195F27C /* Pods */,
-				E5FF17B8C57E8A5856184DD3 /* Frameworks */,
+				A8736410BABA3CA303AECDB8 /* Pods */,
+				A544F74AF343198D7C0062DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +93,7 @@
 				7A33EB5A1AA1F40D004E7A84 /* AppDelegate.swift */,
 				7A33EB5C1AA1F40D004E7A84 /* ViewController.swift */,
 				7A33EB7C1AA1F520004E7A84 /* ModalViewController.swift */,
+				9183E4E01F6189CF001CD3B5 /* InteractiveTransition.swift */,
 				7A33EB5E1AA1F40D004E7A84 /* Main.storyboard */,
 				7A33EB611AA1F40D004E7A84 /* Images.xcassets */,
 				7A33EB631AA1F40D004E7A84 /* LaunchScreen.xib */,
@@ -125,21 +128,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8F9EEFB6A0377195B195F27C /* Pods */ = {
+		A544F74AF343198D7C0062DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A18552ECAB459ADC0286D435 /* Pods-ARNInteractiveTransition.debug.xcconfig */,
-				9B85152E6668E1AE6CA6F410 /* Pods-ARNInteractiveTransition.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E5FF17B8C57E8A5856184DD3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2C5CA38B78F4F896E235954B /* Pods_ARNInteractiveTransition.framework */,
+				A7837A0F9BFE743231BF3EF8 /* Pods_ARNInteractiveTransition.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8736410BABA3CA303AECDB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C34D02C3359851A2759105AF /* Pods-ARNInteractiveTransition.debug.xcconfig */,
+				40A52B73FC70C79DAF011C80 /* Pods-ARNInteractiveTransition.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,12 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A33EB741AA1F40E004E7A84 /* Build configuration list for PBXNativeTarget "ARNInteractiveTransition" */;
 			buildPhases = (
-				66ED463705F41247FC4DE05C /* Check Pods Manifest.lock */,
+				E6809F21969BE87731B784F5 /* [CP] Check Pods Manifest.lock */,
 				7A33EB511AA1F40D004E7A84 /* Sources */,
 				7A33EB521AA1F40D004E7A84 /* Frameworks */,
 				7A33EB531AA1F40D004E7A84 /* Resources */,
-				4CD9DFAFEFB149F0D9DB16A5 /* Embed Pods Frameworks */,
-				05244E287399D1B0E0986035 /* Copy Pods Resources */,
+				DDF88BAA568DC4B136A11A7F /* [CP] Embed Pods Frameworks */,
+				538FEFC7642AC2681B4819FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,14 +194,17 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Airin;
 				TargetAttributes = {
 					7A33EB541AA1F40D004E7A84 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = P599PJHMNF;
+						LastSwiftMigration = 0900;
 					};
 					7A33EB691AA1F40E004E7A84 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0900;
 						TestTargetID = 7A33EB541AA1F40D004E7A84;
 					};
 				};
@@ -244,14 +250,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05244E287399D1B0E0986035 /* Copy Pods Resources */ = {
+		538FEFC7642AC2681B4819FE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,34 +265,40 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARNInteractiveTransition/Pods-ARNInteractiveTransition-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4CD9DFAFEFB149F0D9DB16A5 /* Embed Pods Frameworks */ = {
+		DDF88BAA568DC4B136A11A7F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARNInteractiveTransition/Pods-ARNInteractiveTransition-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARNTransitionAnimator/ARNTransitionAnimator.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARNTransitionAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARNInteractiveTransition/Pods-ARNInteractiveTransition-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		66ED463705F41247FC4DE05C /* Check Pods Manifest.lock */ = {
+		E6809F21969BE87731B784F5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARNInteractiveTransition-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -298,6 +310,7 @@
 			files = (
 				7A33EB7D1AA1F520004E7A84 /* ModalViewController.swift in Sources */,
 				7A33EB5D1AA1F40D004E7A84 /* ViewController.swift in Sources */,
+				9183E4E11F6189CF001CD3B5 /* InteractiveTransition.swift in Sources */,
 				7A33EB5B1AA1F40D004E7A84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,13 +361,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -363,6 +384,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -375,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -391,13 +413,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -405,40 +435,48 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		7A33EB751AA1F40E004E7A84 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A18552ECAB459ADC0286D435 /* Pods-ARNInteractiveTransition.debug.xcconfig */;
+			baseConfigurationReference = C34D02C3359851A2759105AF /* Pods-ARNInteractiveTransition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P599PJHMNF;
 				INFOPLIST_FILE = ARNInteractiveTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		7A33EB761AA1F40E004E7A84 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B85152E6668E1AE6CA6F410 /* Pods-ARNInteractiveTransition.release.xcconfig */;
+			baseConfigurationReference = 40A52B73FC70C79DAF011C80 /* Pods-ARNInteractiveTransition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P599PJHMNF;
 				INFOPLIST_FILE = ARNInteractiveTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -458,6 +496,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARNInteractiveTransition.app/ARNInteractiveTransition";
 			};
 			name = Debug;
@@ -474,6 +514,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARNInteractiveTransition.app/ARNInteractiveTransition";
 			};
 			name = Release;
