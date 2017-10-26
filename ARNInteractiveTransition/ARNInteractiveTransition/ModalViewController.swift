@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModalViewController: UIViewController {
+class ModalViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView : UICollectionView!
     
@@ -35,7 +35,7 @@ class ModalViewController: UIViewController {
         return 20
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         return cell
     }

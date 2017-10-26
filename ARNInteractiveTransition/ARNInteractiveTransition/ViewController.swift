@@ -9,7 +9,7 @@
 import UIKit
 import ARNTransitionAnimator
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView : UITableView!
     
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         return 20
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
         return cell
     }
