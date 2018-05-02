@@ -19,14 +19,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.layer.cornerRadius = 8.0
+        self.tableView.layer.cornerRadius = 8.0
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         self.modalVC = storyboard.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .custom
-//        self.modalVC.tapCloseButtonActionHandler = { [weak self] in
-//            
-//        }
+        self.modalVC.modalPresentationStyle = .overCurrentContext
+        self.modalVC.tapCloseButtonActionHandler = { [weak self] in
+            self?.modalVC.dismiss(animated: true, completion: nil)
+        }
         
         self.setupAnimator()
     }

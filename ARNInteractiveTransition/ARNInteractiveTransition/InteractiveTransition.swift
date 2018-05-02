@@ -39,7 +39,7 @@ final class InteractiveTransition : TransitionAnimatable {
     
     func willAnimation(_ transitionType: TransitionType, containerView: UIView) {
         self.rootVC.tableView.bounces = false
-        endOriginY = containerView.bounds.height - 50
+        endOriginY = containerView.bounds.height - 100
         
         if transitionType.isPresenting {
             rootVC.tableView.setContentOffset(rootVC.tableView.contentOffset, animated: false)
@@ -104,5 +104,3 @@ extension InteractiveTransition {
     
     func destVC() -> UIViewController { return self.modalVC }
 }
-
-
